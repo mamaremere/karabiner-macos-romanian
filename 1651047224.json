@@ -1,0 +1,78 @@
+{
+  "title": "Romanian Keyboard changes",
+  "rules": [
+    {
+      "description": "Change fn + / for \\ and |",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "backslash"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": [
+                "fn", "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "modifiers": ["left_shift"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change romanian î to left_shift",
+      "manipulators": [
+        {
+          "from": { "key_code": "grave_accent_and_tilde" },
+          "to": [{ "key_code": "left_shift" }],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Change romanian ș to backtick and tilde",
+      "manipulators": [
+        {
+          "from": { "key_code": "non_us_backslash" },
+          "to": [{ "key_code": "grave_accent_and_tilde" }],
+          "type": "basic"
+        },
+        {
+          "from": { "key_code": "non_us_backslash", "modifiers": {"optional": ["shift"]} },
+          "to": [{ "key_code": "grave_accent_and_tilde" }],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Change romanian ț to return/enter",
+      "manipulators": [
+        {
+          "from": { "key_code": "backslash" },
+          "to": [{ "key_code": "return_or_enter" }],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
